@@ -3,7 +3,7 @@ import "./App.scss";
 import NavBar from "./components/header/header";
 import MainRoutes from "./main-routes";
 import { Provider } from "react-redux";
-import { BrowserRouter as Router } from "react-router-dom";
+import { HashRouter as Router } from "react-router-dom";
 import reducer from "./store/reducer";
 import thunkMiddleware from "redux-thunk";
 import { composeWithDevTools } from "redux-devtools-extension";
