@@ -35,10 +35,11 @@ class FavoritePage extends Component {
           <h2 className="mb-0 pr-2">My Favorite Cities</h2>
           {arr && arr.length > 0 ? <button className="btn btn-info" onClick={this.switchUnits}>
             {this.state.inCelsius ? "C" : "F"}
-          </button>: ""}
+          </button>: ""
+          }
         </div>
         <div className="container d-flex flex-row flex-wrap align-items-center justify-content-center">
-          {arr && arr.length > 0 && arr[0].currentWeather
+          {arr && arr.length > 0 && arr[0].currentWeather.WeatherIcon
             ? arr.map((city, index) => {
                 return (
                   <div
