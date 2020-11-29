@@ -1,28 +1,58 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 
-const header = () => (
-  <div>
-    <nav className="navbar navbar-expand-sm navbar-light bg-light">
-      <a className="navbar-brand" href="#">
-        Navbar
-      </a>
+const Header = ({ toggleTheamEmmiter, theamDark }) => {
+  const onToggleTheam = (toggleTheamEmmiter) => {
+    toggleTheamEmmiter();
+  };
 
-      <div className="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul className="navbar-nav mr-auto">
-          <li className="nav-item active">
-            <a className="nav-link" href="#">
-              Weather <span className="sr-only">(current)</span>
-            </a>
-          </li>
-          <li className="nav-item">
-            <a className="nav-link" href="#">
-              Favorites
-            </a>
-          </li>
-        </ul>
-      </div>
-    </nav>
-  </div>
-);
+  return (
+    <div>
+      <nav
+        className={`navbar navbar-expand-sm ${
+          theamDark ? "navbar-dark bg-info" : "navbar-light bg-primary"
+        }`}
+      >
+        <button
+          className="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span className="navbar-toggler-icon"></span>
+        </button>
 
-export default header;
+        <div className=" collapse navbar-collapse" id="navbarNav">
+          <ul className={`navbar-nav mr-auto`}>
+            <li className="nav-item active">
+              <Link className="nav-link font-weight-bold" exact="true" to="/">
+                Weather
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link
+                className="nav-link font-weight-bold"
+                exact="true"
+                to="/favorites"
+              >
+                Favorites
+              </Link>
+            </li>
+        <button
+          type="button"
+          className={`${theamDark ? "btn btn-light" : "btn btn-secondary"}`}
+          onClick={() => onToggleTheam(toggleTheamEmmiter)}
+        >
+          theam
+        </button>
+          </ul>
+        </div>
+      </nav>
+    </div>
+  );
+};
+
+export default Header;

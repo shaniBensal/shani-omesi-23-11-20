@@ -1,0 +1,9 @@
+.city-list {
+    z-index: 100;
+    width: 90%;
+    right: 16px;
+
+    @media (max-width: 600px) {
+    width: 80%;
+    }
+}
