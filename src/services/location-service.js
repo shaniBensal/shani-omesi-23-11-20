@@ -5,7 +5,7 @@ const locationKey = "dqKEOp4kl4jyshVvUMkefXTO3X3qBzSP";
 const latLong = { latitude: 31.5227, longitude: 34.5956 };
 function getLocationList(query) {
   let url =
-    "http://dataservice.accuweather.com/locations/v1/cities/autocomplete?";
+    "https://dataservice.accuweather.com/locations/v1/cities/autocomplete?";
   let params = `apikey=${locationKey}&q=${query}`;
   return axios
     .get(url + params)
@@ -18,7 +18,7 @@ function getLocationList(query) {
 }
 
 function getCityForcast(cityKey) {
-  let url = "http://dataservice.accuweather.com/forecasts/v1/daily/5day/";
+  let url = "https://dataservice.accuweather.com/forecasts/v1/daily/5day/";
   let params = `${cityKey}?apikey=${locationKey}`;
   return axios
     .get(url + params)
@@ -31,7 +31,7 @@ function getCityForcast(cityKey) {
 }
 
 function getCityCurrentWeather(cityKey) {
-  let url = "http://dataservice.accuweather.com/currentconditions/v1/";
+  let url = "https://dataservice.accuweather.com/currentconditions/v1/";
   let params = `${cityKey}?apikey=${locationKey}`;
   return axios
     .get(url + params)
@@ -68,7 +68,7 @@ function getCityWeather(cityKey) {
 
 function getDefaultCityData(coords) {
   let coordData = coords ? coords : latLong;
-  let url = `http://dataservice.accuweather.com/locations/v1/cities/geoposition/search?`;
+  let url = `https://dataservice.accuweather.com/locations/v1/cities/geoposition/search?`;
   let params = `apikey=${locationKey}&q=${coordData.latitude},${coordData.longitude}`;
   return axios.get(url + params).then((res) => {
     return { key: res.data.Key, cityName: res.data.EnglishName };
