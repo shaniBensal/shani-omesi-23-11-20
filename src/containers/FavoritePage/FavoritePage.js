@@ -22,15 +22,6 @@ class FavoritePage extends Component {
     this.setState({ inCelsius: !this.state.inCelsius });
   };
 
-  dataReady =()=>{
-    let length = this.props.favoriteList.length;
-    let isReady = false;
-    for(let i=0; i< length; i++){
-      isReady = this.props.favoriteList[i].currentWeather
-    }
-    return isReady;
-  }
-
   componentDidMount() {
     this.props.getMultipleCityWeather();
   }
@@ -43,38 +34,47 @@ class FavoritePage extends Component {
         <ToastContainer />
         <div className="d-flex justify-content-center pb-3">
           <h2 className="mb-0 pr-2">My Favorite Cities</h2>
-          {cities && (cities.length > 0) ? <button className="btn btn-info" onClick={this.switchUnits}>
-            {this.state.inCelsius ? "C" : "F"}
-          </button>: ""
-          }
+          {cities && cities.length > 0 ? (
+            <button className="btn btn-info" onClick={this.switchUnits}>
+              {this.state.inCelsius ? "C" : "F"}
+            </button>
+          ) : (
+            ""
+          )}
         </div>
         <div className="container d-flex flex-row flex-wrap align-items-center justify-content-center">
-          {cities && cities.length > 0 && this.dataReady()
-            ? cities.map((city) => {
-                return (
-                  <div
-                    key={city.key}
-                    className="d-flex flex-column align-items-center pb-3 px-0 pr-3"
-                  >
-                    <div className="title d-flex align-items-center">
-                      <h3 className="mb-0 pb-2">{city.cityName}</h3>
-                      <p
-                        className="mb-0 pl-2"
-                        onClick={() => this.props.toggleFavorite(city)}
-                      >
-                        <BsFillHeartFill className="text-danger" />
-                      </p>
-                    </div>
+          {cities && cities.length > 0 ? (
+            cities.map((city) => {
+              return (
+                <div
+                  key={city.key}
+                  className="d-flex flex-column align-items-center pb-3 px-0 pr-3"
+                >
+                  <div className="title d-flex align-items-center">
+                    <h3 className="mb-0 pb-2">{city.cityName}</h3>
+                    <p
+                      className="mb-0 pl-2"
+                      onClick={() => this.props.toggleFavorite(city)}
+                    >
+                      <BsFillHeartFill className="text-danger" />
+                    </p>
+                  </div>
+                  {city.currentWeather ? (
                     <CardCurrent
-                    isCelcius={this.state.inCelsius}
+                      isCelcius={this.state.inCelsius}
                       forcastBtn={true}
                       onSetSelectedCity={() => this.props.setSelectedCity(city)}
                       cityInfo={city.currentWeather}
                     ></CardCurrent>
-                  </div>
-                );
-              })
-            : <h3>No Favorits for now</h3>}
+                  ) : (
+                    ""
+                  )}
+                </div>
+              );
+            })
+          ) : (
+            <h3>No Favorits for now</h3>
+          )}
         </div>
       </div>
     );
