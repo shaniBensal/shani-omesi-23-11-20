@@ -51,7 +51,7 @@ export const getMultipleCityWeather = () => {
 export const setMultipleCurrentWeather = (weatherList) => {
   return {
     type: actionType.SET_MULTIPLE_CITY_WEATHER,
-    payload: weatherList,
+    payload: weatherList
   };
 };
 

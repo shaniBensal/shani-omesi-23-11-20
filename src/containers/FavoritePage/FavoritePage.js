@@ -26,21 +26,21 @@ class FavoritePage extends Component {
   }
 
   render() {
-    let arr = this.props.favoriteList;
+    let cities = this.props.favoriteList;
 
     return (
       <div>
         <ToastContainer />
         <div className="d-flex justify-content-center pb-3">
           <h2 className="mb-0 pr-2">My Favorite Cities</h2>
-          {arr && arr.length > 0 ? <button className="btn btn-info" onClick={this.switchUnits}>
+          {cities && cities.length > 0 ? <button className="btn btn-info" onClick={this.switchUnits}>
             {this.state.inCelsius ? "C" : "F"}
           </button>: ""
           }
         </div>
         <div className="container d-flex flex-row flex-wrap align-items-center justify-content-center">
-          {arr && arr.length > 0 && arr[0].currentWeather.WeatherIcon
-            ? arr.map((city, index) => {
+          {cities && cities.length > 0 &&cities[0].currentWeather
+            ? cities.map((city, index) => {
                 return (
                   <div
                     key={city.key}

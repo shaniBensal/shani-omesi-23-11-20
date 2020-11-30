@@ -1,7 +1,7 @@
 import axios from "axios";
 import { toast } from "react-toastify";
 
-const locationKey = "dqKEOp4kl4jyshVvUMkefXTO3X3qBzSP";
+const locationKey = "btgTHTNz6CJYpgDdngZC3J1SC7O6eU9z";
 const latLong = { latitude: 31.5227, longitude: 34.5956 };
 function getLocationList(query) {
   let url =
