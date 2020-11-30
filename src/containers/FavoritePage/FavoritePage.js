@@ -7,6 +7,7 @@ import CardCurrent from "../../components/CardCurrent/CardCurrent";
 import { connect } from "react-redux";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { ThemeConsumer } from "react-bootstrap/esm/ThemeProvider";
 
 class FavoritePage extends Component {
   state = {
@@ -20,6 +21,15 @@ class FavoritePage extends Component {
   switchUnits = () => {
     this.setState({ inCelsius: !this.state.inCelsius });
   };
+
+  dataReady =()=>{
+    let length = this.props.favoriteList.length;
+    let isReady = false;
+    for(let i=0; i< length; i++){
+      isReady = this.props.favoriteList[i].currentWeather
+    }
+    return isReady;
+  }
 
   componentDidMount() {
     this.props.getMultipleCityWeather();
@@ -39,8 +49,8 @@ class FavoritePage extends Component {
           }
         </div>
         <div className="container d-flex flex-row flex-wrap align-items-center justify-content-center">
-          {cities && cities.length > 0 && (!!cities[0].currentWeather)
-            ? cities.map((city, index) => {
+          {cities && cities.length > 0 && this.dataReady()
+            ? cities.map((city) => {
                 return (
                   <div
                     key={city.key}
