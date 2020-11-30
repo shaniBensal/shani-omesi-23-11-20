@@ -5,7 +5,6 @@ import getIcon from '../../services/weather-image-service.js';
 
 const CardCurrent = ({ cityInfo, forcastBtn, onSetSelectedCity, isCelcius }) => {
   const history = useHistory();
-  console.log(cityInfo)
 
   const showForcast = (onSetSelectedCity) => {
     onSetSelectedCity();

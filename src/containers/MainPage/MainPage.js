@@ -82,7 +82,7 @@ class MainPage extends Component {
             </div>
           </form>
         </div>
-        {this.props.selectedCity&& this.props.currentWeather.WeatherIcon ? (
+        {this.props.selectedCity && this.props.currentWeather ? (
           <div className="d-flex flex-column align-items-center ">
             <div className="d-flex align-items-center pb-3">
               <h2 className="mb-0 pr-2">{this.props.selectedCity.cityName} </h2>
