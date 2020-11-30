@@ -33,13 +33,13 @@ class FavoritePage extends Component {
         <ToastContainer />
         <div className="d-flex justify-content-center pb-3">
           <h2 className="mb-0 pr-2">My Favorite Cities</h2>
-          {cities && cities.length > 0 ? <button className="btn btn-info" onClick={this.switchUnits}>
+          {cities && (cities.length > 0) ? <button className="btn btn-info" onClick={this.switchUnits}>
             {this.state.inCelsius ? "C" : "F"}
           </button>: ""
           }
         </div>
         <div className="container d-flex flex-row flex-wrap align-items-center justify-content-center">
-          {cities && cities.length > 0 &&cities[0].currentWeather
+          {cities && cities.length > 0 && (!!cities[0].currentWeather)
             ? cities.map((city, index) => {
                 return (
                   <div
