@@ -5,6 +5,7 @@ import getIcon from '../../services/weather-image-service.js';
 
 const CardCurrent = ({ cityInfo, forcastBtn, onSetSelectedCity, isCelcius }) => {
   const history = useHistory();
+  console.log(cityInfo)
 
   const showForcast = (onSetSelectedCity) => {
     onSetSelectedCity();
@@ -22,7 +23,7 @@ const CardCurrent = ({ cityInfo, forcastBtn, onSetSelectedCity, isCelcius }) => 
   return (
     <div className="card text-body">
       <img
-        src={getIcon(cityInfo.WeatherIcon).toString()}
+        src={getIcon(cityInfo.WeatherIcon)}
         className="card-img-top"
         alt={cityInfo.WeatherText}
       />
