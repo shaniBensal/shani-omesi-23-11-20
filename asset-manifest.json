@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/shani-omesi-23-11-20/static/css/main.36ec4577.chunk.css",
-    "main.js": "/shani-omesi-23-11-20/static/js/main.3f6eda7f.chunk.js",
-    "main.js.map": "/shani-omesi-23-11-20/static/js/main.3f6eda7f.chunk.js.map",
+    "main.js": "/shani-omesi-23-11-20/static/js/main.bd0c72b4.chunk.js",
+    "main.js.map": "/shani-omesi-23-11-20/static/js/main.bd0c72b4.chunk.js.map",
     "runtime-main.js": "/shani-omesi-23-11-20/static/js/runtime-main.4b5fbb3e.js",
     "runtime-main.js.map": "/shani-omesi-23-11-20/static/js/runtime-main.4b5fbb3e.js.map",
     "static/css/2.8c7a7b99.chunk.css": "/shani-omesi-23-11-20/static/css/2.8c7a7b99.chunk.css",
@@ -24,6 +24,6 @@
     "static/css/2.8c7a7b99.chunk.css",
     "static/js/2.ce564a69.chunk.js",
     "static/css/main.36ec4577.chunk.css",
-    "static/js/main.3f6eda7f.chunk.js"
+    "static/js/main.bd0c72b4.chunk.js"
   ]
 }
