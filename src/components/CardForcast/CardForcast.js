@@ -33,11 +33,11 @@ const CardForcast = ({ forcastData, isCelcius }) => {
                   <p>
                     <b>Day: </b>
                   </p>
-                  <img src={getIcon(cityInfo.Day.Icon).toString()} className="card-img" alt="..." />
+                  <img src={!!cityInfo.Day && !!cityInfo.Day.Icon ? getIcon(cityInfo.Day.Icon): "" } className="card-img" alt="..." />
                   <p>
                     <b>Night: </b>
                   </p>
-                  <img src={getIcon(cityInfo.Night.Icon).toString()} className="card-img" alt="..." />
+                  <img src={!!cityInfo.Night && !!cityInfo.Night.Icon ? getIcon(cityInfo.Night.Icon): "" } className="card-img" alt="..." />
                 </div>
                 <div className="col-md-6">
                   <div className="card-body card-body py-2 h-100 d-flex flex-column justify-content-center">

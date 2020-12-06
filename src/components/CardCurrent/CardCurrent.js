@@ -22,7 +22,7 @@ const CardCurrent = ({ cityInfo, forcastBtn, onSetSelectedCity, isCelcius }) => 
   return (
     <div className="card text-body">
       <img
-        src={getIcon(cityInfo.WeatherIcon)}
+        src={cityInfo.WeatherIcon ? getIcon(cityInfo.WeatherIcon): ""}
         className="card-img-top"
         alt={cityInfo.WeatherText}
       />
